@@ -1,17 +1,17 @@
 DOCUMENTACION
-
+=============
 Instalacion Servidor
-====================
+--------------------
 
 Instalacion y configuracion PGSQL y POSTGIS
-===========================================
+-------------------------------------------
 
 sudo apt-get install postgresql-8.4-postgis git openssh-server apache2 phppgadmin
 
 nano /etc/apache2/conf.d/phppgadmin
 
-cambiar: 
-#allow from 127.0.0.0/255.0.0.0 ::1/128
+cambiar(comentar/descomentar): 
+allow from 127.0.0.0/255.0.0.0 ::1/128
 por:
 allow from all
 
@@ -35,5 +35,15 @@ psql -U postgres -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql vu
 
 psql -U postgres -f /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql vuelo
 
+Instalacion y configuracion de symfony
+--------------------------------------
 
+cp /etc/apache2/sites-available/default /etc/apache2/sites-available/appvuelo
 
+cambiar la ruta a la aplicacion
+
+a2dissite default
+
+a2ensite appvuelo
+
+/etc/init.d/apache2 restart
