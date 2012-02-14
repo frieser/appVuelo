@@ -59,3 +59,19 @@ short_open_tag = Off
 apt-get install php5-sqlite php-apc php5-intl
 
 /etc/init.d/apache2 restart
+
+datos configuracion symfony
+[parameters]
+    database_driver="pdo_pgsql"
+    database_host="localhost"
+    database_port=""
+    database_name="vuelo"
+    database_user="posgres"
+    database_password="clave"
+    mailer_transport="smtp"
+    mailer_host="localhost"
+    mailer_user=""
+    mailer_password=""
+    locale="en"
+    secret="token"
+
