@@ -47,3 +47,15 @@ a2dissite default
 a2ensite appvuelo
 
 /etc/init.d/apache2 restart
+
+chmod -R 777 app/cache/ app/logs/
+
+
+nano /etc/php5/apache2/php.ini
+
+date.timezone = Europe/Madrid
+short_open_tag = Off
+
+apt-get install php5-sqlite php-apc php5-intl
+
+/etc/init.d/apache2 restart
