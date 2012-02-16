@@ -1,3 +1,7 @@
 AgoratecVueloAppBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AgoratecVueloAppBundle:Default:index }
+    pattern:  /home
+    defaults: { _controller: AgoratecVueloAppBundle:Home:index }
+
+AgoratecVueloAppBundle_adminpage:
+    pattern:  /admin
+    defaults: { _controller: AgoratecVueloAppBundle:Admin:index }
