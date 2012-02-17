@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Placemark><name>Test</name>
+<Polygon><outerBoundaryIs><LinearRing><coordinates>-6.866455,40.225023999999998 -5.603027,40.132691000000001 -5.218506,39.457402999999999 -6.784058,39.698734000000002 -6.866455,40.225023999999998</coordinates></LinearRing></outerBoundaryIs></Polygon>
+<Polygon><outerBoundaryIs><LinearRing><coordinates>-6.9104,38.281312999999997 -5.690918,38.264063 -5.515137,39.002110000000002 -7.086182,38.689798000000003 -6.9104,38.281312999999997</coordinates></LinearRing></outerBoundaryIs></Polygon>
+</Placemark></kml>

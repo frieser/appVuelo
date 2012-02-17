@@ -54,13 +54,13 @@ CREATE TABLE app.avion_posicion(
 );
 
 INSERT INTO app.avion_posicion(avion,orientacion,velocidad,altitud,posicion,hora)
-VALUES(1,210,40,2000,ST_GeographyFromText('SRID=4326;POINT(-110 30)'), now());
+VALUES(1,210,40,2000,ST_GeographyFromText('SRID=4326;POINT(-6.527252 39.713525)'), now());
 
 INSERT INTO app.avion_posicion(avion,orientacion,velocidad,altitud,posicion,hora)
-VALUES(2,100,20,1000,ST_GeographyFromText('SRID=4326;POINT(39 -6)'), now());
+VALUES(2,100,20,1000,ST_GeographyFromText('SRID=4326;POINT(-7.234497 39.420282)'), now());
 
 INSERT INTO app.avion_posicion(avion,orientacion,velocidad,altitud,posicion,hora)
-VALUES(3,10,14,200,ST_GeographyFromText('SRID=4326;POINT(40 -5)'), now());
+VALUES(3,10,14,200,ST_GeographyFromText('SRID=4326;POINT(-6.345978 38.943389)'), now());
 
 --AEROPUERTOS
 -------------
@@ -75,10 +75,10 @@ CREATE TABLE app.aeropuertos(
 );
 
 INSERT INTO app.aeropuertos(nombre,tipo,posicion)
-VALUES('Caceres','A',ST_GeographyFromText('SRID=4326;POINT(41 -4)'));
+VALUES('Caceres','A',ST_GeographyFromText('SRID=4326;POINT(-6.973572 38.908133)'));
 
 INSERT INTO app.aeropuertos(nombre,tipo,posicion)
-VALUES('Badajoz','O',ST_GeographyFromText('SRID=4326;POINT(38 -6)'));
+VALUES('Badajoz','O',ST_GeographyFromText('SRID=4326;POINT(-5.539856 39.894987)'));
 
 --ZONAS
 -------
@@ -93,10 +93,10 @@ CREATE TABLE app.zonas(
 );
 
 INSERT INTO app.zonas(nombre,tipo,area)
-VALUES('Extremadura','W',ST_GeographyFromText('SRID=4326;POLYGON((0 0, 0 10, 10 10, 10 0, 0 0))'));
+VALUES('Zona de Caceres','W',ST_GeographyFromText('SRID=4326;POLYGON((-6.866455 40.225024,-5.603027  40.132691,-5.218506 39.457403,-6.784058 39.698734, -6.866455 40.225024))'));
 
 INSERT INTO app.zonas(nombre,tipo,area)
-VALUES('Extremadura2','W',ST_GeographyFromText('SRID=4326;POLYGON((38 5, 38 6, 39 6, 39 5,38 5))'));
+VALUES('Zona de Badajoz','W',ST_GeographyFromText('SRID=4326;POLYGON((-6.9104 38.281313,-5.690918  38.264063,-5.515137 39.00211,-7.086182 38.689798,-6.9104 38.281313))'));
 
 --hay que cerrar los puntos en polygon
 
