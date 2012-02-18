@@ -2,6 +2,10 @@ AgoratecVueloAppBundle_homepage:
     pattern:  /home
     defaults: { _controller: AgoratecVueloAppBundle:Home:index }
 
+AgoratecVueloAppBundle_homekmlpage:
+    pattern:  /home/kml
+    defaults: { _controller: AgoratecVueloAppBundle:Home:kml }
+
 AgoratecVueloAppBundle_adminpage:
     pattern:  /admin
     defaults: { _controller: AgoratecVueloAppBundle:Admin:index }

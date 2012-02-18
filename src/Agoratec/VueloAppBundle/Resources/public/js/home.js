@@ -31,8 +31,39 @@ $(document).ready(function(){
     map = new google.maps.Map(document.getElementById("map_canvas"),
         myOptions);
 
-var ctaLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/150677/test.kml');
-ctaLayer.setMap(map);
+
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	kml=xmlhttp.responseText.toString();
+	alert(xmlhttp.responseText.toString());
+	
+
+
+
+	
+    }
+  }
+
+xmlhttp.open("GET","http://192.168.1.18/kml.php",true);
+xmlhttp.send();
+
+
+var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test.kml");
+	ctaLayer.setMap(map);
+
+
 	var homeControlDiv = document.createElement('DIV');
   var homeControl = new HomeControl(homeControlDiv, map);
 
