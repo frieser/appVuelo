@@ -2,12 +2,16 @@ var map;
 var marker;
 var infowindow;
 var caceres = new google.maps.LatLng(39.481785, -6.369324);
+var browserSupportFlag =  new Boolean();
+var initialLocation;
 
 $(document).ready(function(){
+	$('.dropdown-toggle').dropdown()
+
+
     var latlng = caceres;
 	var myOptions = {
 	    zoom: 8,
-	    center: caceres,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP,
 	    mapTypeControl: true,
 	    mapTypeControlOptions: {
@@ -18,18 +22,57 @@ $(document).ready(function(){
 	    panControlOptions: {
 		position: google.maps.ControlPosition.TOP_RIGHT
 	    },
-	    zoomControl: true,
-	    zoomControlOptions: {
-		style: google.maps.ZoomControlStyle.LARGE,
-		position: google.maps.ControlPosition.LEFT_CENTER
-	    },
-	    streetViewControl: true,
-	    streetViewControlOptions: {
-		position: google.maps.ControlPosition.LEFT_TOP
-	    }
+	    zoomControl: false,
+	    streetViewControl: false,
 	  };
     map = new google.maps.Map(document.getElementById("map_canvas"),
         myOptions);
+
+ if(navigator.geolocation) {
+    browserSupportFlag = true;
+    navigator.geolocation.getCurrentPosition(function(position) {
+      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      map.setCenter(initialLocation);
+	var url="http://192.168.1.15/kml.php?lat=";
+	alert(position.coords.latitude);
+	alert(position.coords.longitude);
+	url+=position.coords.latitude;
+	url+="&lng=";
+	url+=position.coords.longitude;
+	alert(url);
+	
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+	
+    }, function() {
+      handleNoGeolocation(browserSupportFlag);
+    });
+  // Try Google Gears Geolocation
+  } else if (google.gears) {
+    browserSupportFlag = true;
+    var geo = google.gears.factory.create('beta.geolocation');
+    geo.getCurrentPosition(function(position) {
+      initialLocation = new google.maps.LatLng(position.latitude,position.longitude);
+      map.setCenter(initialLocation);
+    }, function() {
+      handleNoGeoLocation(browserSupportFlag);
+    });
+  // Browser doesn't support Geolocation
+  } else {
+    browserSupportFlag = false;
+    handleNoGeolocation(browserSupportFlag);
+  }
+  
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag == true) {
+      alert("Geolocation service failed.");
+      initialLocation = newyork;
+    } else {
+      alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+      initialLocation = siberia;
+    }
+    map.setCenter(initialLocation);
+  }
 
 
 var xmlhttp;
@@ -51,8 +94,7 @@ xmlhttp.onreadystatechange=function()
     }
   }
 
-xmlhttp.open("GET","http://192.168.1.15/kml.php",true);
-xmlhttp.send();
+
 
 
 var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test.kml");

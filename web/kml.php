@@ -1,5 +1,8 @@
 <?php
 
+$lat=$_GET["lat"];
+$lng=$_GET["lng"];
+
 $ourFileName = "/home/frieser/vueloapp/web/kml_tmp/test.kml";
 
 $ourFileHandle = fopen($ourFileName, 'w') or die("can't open file");
@@ -53,6 +56,9 @@ for ($i = 0; $i < pg_numrows($query_result_aeropuertos); $i++) {
     //creamos el placemark para la fila
     $kml .= "<Placemark><name>Aeropuerto: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
 }
+
+//tb incluios la posicion del usuario
+$kml .= "<Placemark><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>".$lat.",".$lng."</coordinates></Point></Placemark>\n";
  
 //cerramos el documento kml
 $kml .= "</Folder></kml>";
