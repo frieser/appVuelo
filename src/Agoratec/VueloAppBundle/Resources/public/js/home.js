@@ -47,16 +47,11 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
 	kml=xmlhttp.responseText.toString();
-	alert(xmlhttp.responseText.toString());
-	
-
-
-
-	
+	alert(xmlhttp.responseText);
     }
   }
 
-xmlhttp.open("GET","http://192.168.1.18/kml.php",true);
+xmlhttp.open("GET","http://192.168.1.15/kml.php",true);
 xmlhttp.send();
 
 
