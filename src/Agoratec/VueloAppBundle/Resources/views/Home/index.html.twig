@@ -7,36 +7,14 @@
 {% endblock %}
 
 {% block body %}
-
-{% block nav_bar%}
-<div class="navbar">
-	<div class="navbar-inner">
-	    <div class="container">
-		<ul class="nav pills">
-		  <li class="active"><a href="#">Regular link</a></li>
-		  <li class="dropdown" id="menu1">
-		    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-		      Dropdown
-		      <b class="caret"></b>
-		    </a>
-		    <ul class="dropdown-menu">
-		      <li><div class="login"><a href="#">Login</a></div></li>
-		      <li><a href="#">Registration</a></li>
-		      <li><a href="#">Something else here</a></li>
-		      <li class="divider"></li>
-		      <li><a href="#">Separated link</a></li>
-		    </ul>
-		  </li>
-		</ul>
-	    </div>
-	</div>
-</div>
-
-	
-{% endblock %}
 {{ parent() }}
 
-<div id="map_canvas" style="width:100%; height:100%"></div>
+
+{% block nav_bar%}
+{% include "AgoratecVueloAppBundle:Home:navbar.html.twig"%}
+	
+{% endblock %}
+<div id="map_canvas"></div>
 {% endblock %}
 
 

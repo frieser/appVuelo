@@ -34,12 +34,9 @@ $(document).ready(function(){
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
 	var url="http://192.168.1.15/kml.php?lat=";
-	alert(position.coords.latitude);
-	alert(position.coords.longitude);
 	url+=position.coords.latitude;
 	url+="&lng=";
 	url+=position.coords.longitude;
-	alert(url);
 	
 	xmlhttp.open("GET",url,true);
 	xmlhttp.send();
@@ -95,6 +92,20 @@ xmlhttp.onreadystatechange=function()
   }
 
 
+$(".navbar .nav li.localizate a").click(function() {
+
+		 var marker = new google.maps.Marker({
+	      position: initialLocation,
+	      title:"Tu posicion"
+	  });
+  
+
+  map.setCenter(initialLocation);
+	marker.setMap(map);
+	infowindow.open(map,marker);
+});
+
+
 
 
 var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test.kml");
@@ -108,37 +119,5 @@ var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test.kml
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(homeControlDiv);
  });
 
-function HomeControl(controlDiv, map) {
 
-  // Set CSS styles for the DIV containing the control
-  // Setting padding to 5 px will offset the control
-  // from the edge of the map
-  controlDiv.style.padding = '5px';
-
-  // Set CSS for the control border
-  var controlUI = document.createElement('DIV');
-  controlUI.style.backgroundColor = 'white';
-  controlUI.style.borderStyle = 'solid';
-  controlUI.style.borderWidth = '1px';
-  controlUI.style.cursor = 'pointer';
-  controlUI.style.textAlign = 'center';
-  controlUI.title = 'Click to set the map to Cáceres';
-  controlDiv.appendChild(controlUI);
-
-  // Set CSS for the control interior
-  var controlText = document.createElement('DIV');
-  controlText.style.fontFamily = 'Arial,sans-serif';
-  controlText.style.fontSize = '14px';
-  controlText.style.paddingLeft = '8px';
-  controlText.style.paddingRight = '8px';
-  controlText.innerHTML = 'Localizate';
-  controlUI.appendChild(controlText);
-
-  // Setup the click event listeners: simply set the map to Chicago
-  google.maps.event.addDomListener(controlUI, 'click', function() {
-    map.setCenter(caceres);
-	marker.setMap(map);
-	infowindow.open(map,marker);
-  });
-}
 
