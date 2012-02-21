@@ -5,7 +5,7 @@ $lng=$_GET["lng"];
 
 $ourFileName = "/home/frieser/vueloapp/web/kml_tmp/test.kml";
 
-$ourFileHandle = fopen($ourFileName, 'w') or die("can't open file");
+$ourFileHandle = fopen($ourFileName, 'w') or die("can't ooopen file");
  
 //pÃ¡gina php de ejemplo que realiza una consulta en la base de datos
 //y retorna un kml al navegador del cliente
@@ -90,7 +90,7 @@ for ($i = 0; $i < pg_numrows($query_result_aeropuertos); $i++) {
 }
 
 //tb incluios la posicion del usuario
-$kml .= "<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>".$lat.",".$lng."</coordinates></Point></Placemark>\n";
+$kml .= "<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>".$lng.",".$lat."</coordinates></Point></Placemark>\n";
  
 //cerramos el documento kml
 $kml .= "</Folder></Document></kml>";
