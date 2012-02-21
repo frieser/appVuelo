@@ -14,15 +14,18 @@ $(document).ready(function(){
 	    zoom: 8,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP,
 	    mapTypeControl: true,
-	    mapTypeControlOptions: {
-		style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-		position: google.maps.ControlPosition.BOTTOM_CENTER
-	    },
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
 	    panControl: true,
 	    panControlOptions: {
 		position: google.maps.ControlPosition.TOP_RIGHT
 	    },
-	    zoomControl: false,
+	     zoomControl: true,
+	  zoomControlOptions: {
+	    style: google.maps.ZoomControlStyle.SMALL,
+		position: google.maps.ControlPosition.TOP_RIGHT
+	  },
 	    streetViewControl: false,
 	  };
     map = new google.maps.Map(document.getElementById("map_canvas"),
