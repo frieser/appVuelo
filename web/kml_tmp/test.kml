@@ -1,10 +1,38 @@
-<kml xmlns="http://www.opengis.net/kml/2.2"><Folder><Placemark><name>Zona: Extremadura</name><description>Extremadura</description><Polygon><outerBoundaryIs><LinearRing><coordinates>0,0 0,10 10,10 10,0 0,0</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><Style id="normalState">
+    <IconStyle>
+      <scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/pal3/icon55.png</href>
+      </Icon>
+    </IconStyle>
+    <LabelStyle>
+      <scale>1.0</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="highlightState">
+    <IconStyle>
+      <Icon><href>http://maps.google.com/mapfiles/kml/pal3/icon60.png</href>
+      </Icon>
+      <scale>1.1</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>1.1</scale>
+      <color>ff0000c0</color>
+    </LabelStyle>
+  </Style>
+  <StyleMap id="styleMapExample">
+    <Pair>
+      <key>normal</key><styleUrl>#normalState</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key><styleUrl>#highlightState</styleUrl>
+    </Pair>
+  </StyleMap><Folder><Placemark><name>Zona: Extremadura</name><description>Extremadura</description><Polygon><outerBoundaryIs><LinearRing><coordinates>0,0 0,10 10,10 10,0 0,0</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: Extremadura2</name><description>Extremadura2</description><Polygon><outerBoundaryIs><LinearRing><coordinates>38,5 38,6 39,6 39,5 38,5</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: Caceres</name><description>Caceres</description><Polygon><outerBoundaryIs><LinearRing><coordinates>39.713524999999997,-6.534119 39.726201000000003,-6.880188 39.234380999999999,-7.003784 39.438313999999998,-6.583557 39.713524999999997,-6.534119</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
-<Placemark><name>Avion: 1</name><description>1</description><Point><coordinates>-110,30</coordinates></Point></Placemark>
-<Placemark><name>Avion: 2</name><description>2</description><Point><coordinates>39,-6</coordinates></Point></Placemark>
-<Placemark><name>Avion: 3</name><description>3</description><Point><coordinates>40,-5</coordinates></Point></Placemark>
-<Placemark><name>Aeropuerto: Caceres</name><description>Caceres</description><Point><coordinates>41,-4</coordinates></Point></Placemark>
-<Placemark><name>Aeropuerto: Badajoz</name><description>Badajoz</description><Point><coordinates>38,-6</coordinates></Point></Placemark>
-<Placemark><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>39.4924984,-6.3606656</coordinates></Point></Placemark>
-</Folder></kml>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Avion: 1</name><description>1</description><Point><coordinates>-110,30</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Avion: 2</name><description>2</description><Point><coordinates>39,-6</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Avion: 3</name><description>3</description><Point><coordinates>40,-5</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Aeropuerto: Caceres</name><description>Caceres</description><Point><coordinates>41,-4</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Aeropuerto: Badajoz</name><description>Badajoz</description><Point><coordinates>38,-6</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>39.4925033,-6.360617299999999</coordinates></Point></Placemark>
+</Folder></Document></kml>

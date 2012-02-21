@@ -28,7 +28,39 @@ $query_result = pg_Exec($dbconn,$sql) or die (pgErrorMessage());
 $query_result_posciones = pg_Exec($dbconn,$sql_posciones) or die (pgErrorMessage());
 $query_result_aeropuertos = pg_Exec($dbconn,$sql_aeropuertos) or die (pgErrorMessage());
 //creamos el string que representarÃ¡ el kml de resultado
-$kml="<kml xmlns=\"http://www.opengis.net/kml/2.2\"><Folder>";
+$kml="<kml xmlns=\"http://www.opengis.net/kml/2.2\"><Document>";
+$kml.="<Style id=\"normalState\">
+    <IconStyle>
+      <scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/pal3/icon55.png</href>
+      </Icon>
+    </IconStyle>
+    <LabelStyle>
+      <scale>1.0</scale>
+    </LabelStyle>
+  </Style>
+  <Style id=\"highlightState\">
+    <IconStyle>
+      <Icon><href>http://maps.google.com/mapfiles/kml/pal3/icon60.png</href>
+      </Icon>
+      <scale>1.1</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>1.1</scale>
+      <color>ff0000c0</color>
+    </LabelStyle>
+  </Style>
+  <StyleMap id=\"styleMapExample\">
+    <Pair>
+      <key>normal</key><styleUrl>#normalState</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key><styleUrl>#highlightState</styleUrl>
+    </Pair>
+  </StyleMap>";
+
+
+$kml.="<Folder>";
 // procesamos los resultados de la consulta (procesamos las filas)
 for ($i = 0; $i < pg_numrows($query_result); $i++) {
     // obtiene los valores de cada una de las columnas de la consulta
@@ -45,7 +77,7 @@ for ($i = 0; $i < pg_numrows($query_result_posciones); $i++) {
     $townkml =  pg_result($query_result_posciones, $i, 1);
  
     //creamos el placemark para la fila
-    $kml .= "<Placemark><name>Avion: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
+    $kml .= "<Placemark><styleUrl>#styleMapExample</styleUrl><name>Avion: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
 }
 
 for ($i = 0; $i < pg_numrows($query_result_aeropuertos); $i++) {
@@ -54,14 +86,14 @@ for ($i = 0; $i < pg_numrows($query_result_aeropuertos); $i++) {
     $townkml =  pg_result($query_result_aeropuertos, $i, 1);
  
     //creamos el placemark para la fila
-    $kml .= "<Placemark><name>Aeropuerto: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
+    $kml .= "<Placemark><styleUrl>#styleMapExample</styleUrl><name>Aeropuerto: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
 }
 
 //tb incluios la posicion del usuario
-$kml .= "<Placemark><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>".$lat.",".$lng."</coordinates></Point></Placemark>\n";
+$kml .= "<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>".$lat.",".$lng."</coordinates></Point></Placemark>\n";
  
 //cerramos el documento kml
-$kml .= "</Folder></kml>";
+$kml .= "</Folder></Document></kml>";
 
 fwrite($ourFileHandle, $kml);
  

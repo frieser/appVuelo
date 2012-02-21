@@ -37,7 +37,7 @@ $(document).ready(function(){
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
 	
-	var url="http://192.168.1.15/kml.php?lat=";
+	var url="http://192.168.1.13/kml.php?lat=";
 	url+=position.coords.latitude;
 	url+="&lng=";
 	url+=position.coords.longitude;
