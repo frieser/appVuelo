@@ -33,11 +33,11 @@ $(document).ready(function(){
     navigator.geolocation.getCurrentPosition(function(position) {
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
+	
 	var url="http://192.168.1.15/kml.php?lat=";
 	url+=position.coords.latitude;
 	url+="&lng=";
 	url+=position.coords.longitude;
-	
 	xmlhttp.open("GET",url,true);
 	xmlhttp.send();
 	
@@ -76,6 +76,7 @@ var xmlhttp;
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
+	
 
   }
 else
@@ -86,6 +87,7 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
+	
 	kml=xmlhttp.responseText.toString();
 	alert(xmlhttp.responseText);
     }
@@ -104,9 +106,6 @@ $(".navbar .nav li.localizate a").click(function() {
 	marker.setMap(map);
 	infowindow.open(map,marker);
 });
-
-
-
 
 var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test.kml");
 	ctaLayer.setMap(map);

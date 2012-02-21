@@ -6,5 +6,5 @@
 <Placemark><name>Avion: 3</name><description>3</description><Point><coordinates>40,-5</coordinates></Point></Placemark>
 <Placemark><name>Aeropuerto: Caceres</name><description>Caceres</description><Point><coordinates>41,-4</coordinates></Point></Placemark>
 <Placemark><name>Aeropuerto: Badajoz</name><description>Badajoz</description><Point><coordinates>38,-6</coordinates></Point></Placemark>
-<Placemark><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>39.4924833,-6.360652699999999</coordinates></Point></Placemark>
+<Placemark><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>39.4924984,-6.3606656</coordinates></Point></Placemark>
 </Folder></kml>

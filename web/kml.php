@@ -7,15 +7,15 @@ $ourFileName = "/home/frieser/vueloapp/web/kml_tmp/test.kml";
 
 $ourFileHandle = fopen($ourFileName, 'w') or die("can't open file");
  
-//página php de ejemplo que realiza una consulta en la base de datos
+//pÃ¡gina php de ejemplo que realiza una consulta en la base de datos
 //y retorna un kml al navegador del cliente
  
-//crea la conexión con la base de datos
+//crea la conexiÃ³n con la base de datos
 $dbconn = pg_connect("host=localhost port=5432 dbname=vuelo user=postgres password=puntero21")
 or die ("No pudo conectar");
  
-// definición de la consulta
-// retorna los polígonos que conforman los diferentes condados del estado cargado en postgis
+// definiciÃ³n de la consulta
+// retorna los polÃ­gonos que conforman los diferentes condados del estado cargado en postgis
 $sql = "select nombre,  ST_AsKML(area) as thegeom  from app.zonas;";
 
 $sql_posciones="select avion,  ST_AsKML(posicion) as thegeom  from app.avion_posicion";
@@ -23,11 +23,11 @@ $sql_posciones="select avion,  ST_AsKML(posicion) as thegeom  from app.avion_pos
 $sql_aeropuertos="select nombre,  ST_AsKML(posicion) as thegeom  from app.aeropuertos";
  
 //ejecuta la consulta en el motor de base de datos
-//el resultado consta de un arreglo con todas las filas que cumplen la condición de la consulta
+//el resultado consta de un arreglo con todas las filas que cumplen la condiciÃ³n de la consulta
 $query_result = pg_Exec($dbconn,$sql) or die (pgErrorMessage());
 $query_result_posciones = pg_Exec($dbconn,$sql_posciones) or die (pgErrorMessage());
 $query_result_aeropuertos = pg_Exec($dbconn,$sql_aeropuertos) or die (pgErrorMessage());
-//creamos el string que representará el kml de resultado
+//creamos el string que representarÃ¡ el kml de resultado
 $kml="<kml xmlns=\"http://www.opengis.net/kml/2.2\"><Folder>";
 // procesamos los resultados de la consulta (procesamos las filas)
 for ($i = 0; $i < pg_numrows($query_result); $i++) {
@@ -65,11 +65,11 @@ $kml .= "</Folder></kml>";
 
 fwrite($ourFileHandle, $kml);
  
-//instrucción para que el navegador sepa que el documento es de tipo kml
+//instrucciÃ³n para que el navegador sepa que el documento es de tipo kml
 header('Content-Type: application/vnd.google-earth.kml+xml');
 
  
-//cierra la conexión de base de datos
+//cierra la conexiÃ³n de base de datos
 pg_close($dbconn);
 fclose($ourFileHandle);
  
