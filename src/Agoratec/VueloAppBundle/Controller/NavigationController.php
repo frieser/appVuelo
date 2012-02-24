@@ -7,12 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
-class HomeController extends Controller
+class NavigationController extends Controller
 {
     
     public function indexAction()
     {
-        return $this->render('AgoratecVueloAppBundle:Home:index.html.twig');
+        return $this->render('AgoratecVueloAppBundle:Navigation:index.html.twig');
     }
 
 

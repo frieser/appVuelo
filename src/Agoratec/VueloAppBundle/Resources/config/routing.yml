@@ -1,10 +1,10 @@
-AgoratecVueloAppBundle_homepage:
-    pattern:  /home
-    defaults: { _controller: AgoratecVueloAppBundle:Home:index }
+AgoratecVueloAppBundle_navigationpage:
+    pattern:  /navigation
+    defaults: { _controller: AgoratecVueloAppBundle:Navigation:index }
 
-AgoratecVueloAppBundle_homekmlpage:
-    pattern:  /home/kml/{lat}&{lng}
-    defaults: { _controller: AgoratecVueloAppBundle:Home:kml }
+AgoratecVueloAppBundle_navigationkmlpage:
+    pattern:  /navigation/kml/{lat}&{lng}
+    defaults: { _controller: AgoratecVueloAppBundle:Navigation:kml }
 
 AgoratecVueloAppBundle_adminpage:
     pattern:  /admin
