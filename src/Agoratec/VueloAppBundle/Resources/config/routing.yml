@@ -3,7 +3,7 @@ AgoratecVueloAppBundle_homepage:
     defaults: { _controller: AgoratecVueloAppBundle:Home:index }
 
 AgoratecVueloAppBundle_homekmlpage:
-    pattern:  /home/kml
+    pattern:  /home/kml/{lat}&{lng}
     defaults: { _controller: AgoratecVueloAppBundle:Home:kml }
 
 AgoratecVueloAppBundle_adminpage:

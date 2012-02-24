@@ -37,9 +37,9 @@ $(document).ready(function(){
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
 	
-	var url="http://192.168.1.13/kml.php?lat=";
+	var url="http://192.168.1.14/app_dev.php/home/kml/";
 	url+=position.coords.latitude;
-	url+="&lng=";
+	url+="&";
 	url+=position.coords.longitude;
 	xmlhttp.open("GET",url,true);
 	xmlhttp.send();
@@ -110,7 +110,7 @@ $(".navbar .nav li.localizate a").click(function() {
 	infowindow.open(map,marker);
 });
 
-var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test.kml");
+var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test2.kml");
 	ctaLayer.setMap(map);
 
 

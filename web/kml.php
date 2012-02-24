@@ -32,7 +32,7 @@ $kml="<kml xmlns=\"http://www.opengis.net/kml/2.2\"><Document>";
 $kml.="<Style id=\"normalState\">
     <IconStyle>
       <scale>1.0</scale>
-      <Icon><href>http://maps.google.com/mapfiles/kml/pal3/icon55.png</href>
+      <Icon><href>http://www.yumping.com/skin/new2011/img/iconsmap/grupos/iconMap31p.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
@@ -41,7 +41,7 @@ $kml.="<Style id=\"normalState\">
   </Style>
   <Style id=\"highlightState\">
     <IconStyle>
-      <Icon><href>http://maps.google.com/mapfiles/kml/pal3/icon60.png</href>
+      <Icon><href>http://www.dublinbus.ie/Images/RouteTypeIcons/Airport_Icon.png</href>
       </Icon>
       <scale>1.1</scale>
     </IconStyle>
@@ -56,6 +56,11 @@ $kml.="<Style id=\"normalState\">
     </Pair>
     <Pair>
       <key>highlight</key><styleUrl>#highlightState</styleUrl>
+    </Pair>
+  </StyleMap>
+<StyleMap id=\"styleMapAeroExample\">
+    <Pair>
+      <key>normal</key><styleUrl>#highlightState</styleUrl>
     </Pair>
   </StyleMap>";
 
@@ -86,7 +91,7 @@ for ($i = 0; $i < pg_numrows($query_result_aeropuertos); $i++) {
     $townkml =  pg_result($query_result_aeropuertos, $i, 1);
  
     //creamos el placemark para la fila
-    $kml .= "<Placemark><styleUrl>#styleMapExample</styleUrl><name>Aeropuerto: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
+    $kml .= "<Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
 }
 
 //tb incluios la posicion del usuario
