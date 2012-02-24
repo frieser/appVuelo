@@ -3,19 +3,23 @@
 {% block title %}AppVuelo{% endblock %}
 
 {% block stylesheets %}
-		<link rel="stylesheet" type="text/css" href="{{ asset("bundles/agoratecvueloapp/css/bootstrap/bootstrap.css") }}" />
-{#
-			<link rel="stylesheet" type="text/css" href="{{ asset("bundles/agoratecvueloapp/css/bootstrap/bootstrap-responsive.css") }}" />
-#}
+		<link rel="stylesheet" type="text/css" href="{{ asset("bundles/agoratecvueloapp/css/bootstrap.css") }}" />
+
+			<link rel="stylesheet" type="text/css" href="{{ asset("bundles/agoratecvueloapp/css/bootstrap-responsive.css") }}" />
+
 {% endblock %}
 
 
 {% block body %}
 {% endblock %}
 {% block javascripts %}
+		<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
 		<script type="text/javascript" src="{{ asset("bundles/agoratecvueloapp/js/jquery/jquery-1.7.1.min.js") }}">
 </script>
-		<script type="text/javascript" src="{{ asset("bundles/agoratecvueloapp/js/bootstrap/bootstrap.js") }}">
+		<script type="text/javascript" src="{{ asset("bundles/agoratecvueloapp/js/bootstrap.js") }}">
 		</script>
 {% endblock %}
 

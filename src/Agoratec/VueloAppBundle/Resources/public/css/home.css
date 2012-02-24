@@ -1,12 +1,27 @@
-html { height: 100% }
-  body { height: 100%; margin: 0px; padding: 0px }
-
-.navbar {
-overflow: visible;
-margin-bottom: 0px;
+#app{
+margin-top:10px;
+margin-bottom:10px;
 }
-#map_canvas { 
 
-height: 100% 
+#app_form{
+background-image: url(http://pagescroller.com/images/section_1.png);
+background-repeat-x: no-repeat;
+background-repeat-y: no-repeat;
+background-attachment: initial;
+background-position-x: 50%;
+background-position-y: 50%;
+background-origin: initial;
+background-clip: initial;
+background-color: #1D333A;
+padding:20px;
 
 }
+#app{
+color: white;
+}
+
+
+#app h2,#app h3{
+color: white;
+}
+

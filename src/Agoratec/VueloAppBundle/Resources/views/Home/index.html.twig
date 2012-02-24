@@ -1,6 +1,22 @@
 {% extends 'AgoratecVueloAppBundle::layout.html.twig' %}
 
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("bundles/agoratecvueloapp/css/home.css") }}" />
+
+{% endblock %}
+
 {% block body %}
 {{ parent() }}
-     Hello Home!
+
+{% include "AgoratecVueloAppBundle:Navigation:navbar.html.twig"%}
+
+{% include "AgoratecVueloAppBundle:Home:intro.html.twig"%}
+
+{% include "AgoratecVueloAppBundle:Home:specs.html.twig"%}
+
+{% include "AgoratecVueloAppBundle:Home:app.html.twig"%}
+
+{% include "AgoratecVueloAppBundle:Home:footer.html.twig"%}
+
 {% endblock %}

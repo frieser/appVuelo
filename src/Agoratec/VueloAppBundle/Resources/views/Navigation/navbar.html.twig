@@ -1,11 +1,12 @@
 <div class="row-fluid">
   <div class="span12">		
-	<div class="navbar navbar-static">
+	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 		    <div class="container">
-			 <a class="brand" href={{ path('AgoratecVueloAppBundle_navigationpage') }}><img src="{{ asset('bundles/agoratecvueloapp/images/favicon.png') }}"> AppVuelo</a>
+			 <a class="brand" href={{ path('AgoratecVueloAppBundle_homepage') }}><img src="{{ asset('bundles/agoratecvueloapp/images/favicon.png') }}"> AppVuelo</a>
 			<ul class="nav pills">
-			  <li class="active"><a href="{{ path('AgoratecVueloAppBundle_navigationpage') }}">Home</a></li>
+			  <li class="active"><a href="{{ path('AgoratecVueloAppBundle_homepage') }}">Home</a></li>
+			 <li class="active"><a href="{{ path('AgoratecVueloAppBundle_navigationpage') }}">Volar!</a></li>
 			<li class="localizate"><a href="#">Localizate</a></li>
 			<form class="navbar-search pull-left">
 			  <input type="text" class="search-query" placeholder="Buscar...">
