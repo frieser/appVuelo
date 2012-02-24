@@ -15,16 +15,17 @@ $(document).ready(function(){
 	    mapTypeId: google.maps.MapTypeId.ROADMAP,
 	    mapTypeControl: true,
     mapTypeControlOptions: {
-      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+position: google.maps.ControlPosition.RIGHT_CENTER
     },
 	    panControl: true,
 	    panControlOptions: {
-		position: google.maps.ControlPosition.TOP_RIGHT
+		position: google.maps.ControlPosition.RIGHT_CENTER
 	    },
 	     zoomControl: true,
 	  zoomControlOptions: {
 	    style: google.maps.ZoomControlStyle.SMALL,
-		position: google.maps.ControlPosition.TOP_RIGHT
+		position: google.maps.ControlPosition.RIGHT_CENTER
 	  },
 	    streetViewControl: false,
 	  };
@@ -37,7 +38,7 @@ $(document).ready(function(){
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
 	
-	var url="http://192.168.1.14/app_dev.php/navigation/kml/";
+	var url="http://150.241.237.246/app_dev.php/navigation/kml";
 	url+=position.coords.latitude;
 	url+="&";
 	url+=position.coords.longitude;
@@ -110,7 +111,7 @@ $(".navbar .nav li.localizate a").click(function() {
 	infowindow.open(map,marker);
 });
 
-var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/test2.kml");
+var ctaLayer = new google.maps.KmlLayer("http://150.241.237.246/kml_tmp/test.kml");
 	ctaLayer.setMap(map);
 
 

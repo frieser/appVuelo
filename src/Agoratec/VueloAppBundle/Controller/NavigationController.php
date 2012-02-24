@@ -21,7 +21,7 @@ class NavigationController extends Controller
        //$lat=$_GET["lat"];
 	//$lng=$_GET["lng"];
 
-	$ourFileName = "/home/frieser/vueloapp/web/kml_tmp/test.kml";
+	$ourFileName = "/home/appvuelo/appvuelo/web/kml_tmp/test.kml";
 
 	$ourFileHandle = fopen($ourFileName, 'w') or die("can't ooopen file");
 	 
@@ -29,7 +29,7 @@ class NavigationController extends Controller
 	//y retorna un kml al navegador del cliente
 	 
 	//crea la conexiÃ³n con la base de datos
-	$dbconn = pg_connect("host=localhost port=5432 dbname=vuelo user=postgres password=puntero21")
+	$dbconn = pg_connect("host=localhost port=5432 dbname=vuelo user=postgres password=lxMRb9Hu")
 	or die ("No pudo conectar");
 	 
 	// definiciÃ³n de la consulta
