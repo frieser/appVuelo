@@ -38,7 +38,7 @@ position: google.maps.ControlPosition.RIGHT_CENTER
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
 	
-	var url="http://150.241.237.246/app_dev.php/navigation/kml";
+	var url="http://150.241.237.246/app_dev.php/navigation/kml/";
 	url+=position.coords.latitude;
 	url+="&";
 	url+=position.coords.longitude;

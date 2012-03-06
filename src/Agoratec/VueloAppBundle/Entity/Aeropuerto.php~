@@ -1,0 +1,34 @@
+<?php
+
+namespace Agoratec\VueloAppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="app.aeropuertos")
+ */
+class Aeropuerto
+{
+	/**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $aid;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $name;
+	
+	/**
+     * @ORM\Column(type="string",length=1)
+     */
+    protected $tipo;
+	
+	/**
+     * @ORM\Column(type="Point")
+     */
+    protected $posicion;
+}

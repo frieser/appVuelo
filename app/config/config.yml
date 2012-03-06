@@ -43,6 +43,10 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
+        
+        types:
+            Point:    Agoratec\VueloAppBundle\Lib\Type\PointType
+            Polygon:  Agoratec\VueloAppBundle\Lib\Type\PolygonType
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
