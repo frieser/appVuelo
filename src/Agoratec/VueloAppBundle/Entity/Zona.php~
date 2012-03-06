@@ -20,7 +20,7 @@ class Zona
     /**
      * @ORM\Column(type="string", length=100)
      */
-    protected $name;
+    protected $nombre;
 	
 	/**
      * @ORM\Column(type="string",length=1)
@@ -31,8 +31,6 @@ class Zona
      * @ORM\Column(type="Polygon")
      */
     protected $area;
-
-
 
     /**
      * Get zid
@@ -45,23 +43,23 @@ class Zona
     }
 
     /**
-     * Set name
+     * Set nombre
      *
-     * @param string $name
+     * @param string $nombre
      */
-    public function setName($name)
+    public function setNombre($nombre)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
     }
 
     /**
-     * Get name
+     * Get nombre
      *
      * @return string 
      */
-    public function getName()
+    public function getNombre()
     {
-        return $this->name;
+        return $this->nombre;
     }
 
     /**
@@ -89,7 +87,7 @@ class Zona
      *
      * @param Polygon $area
      */
-    public function setArea(\Polygon $area)
+    public function setArea($area)
     {
         $this->area = $area;
     }

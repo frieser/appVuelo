@@ -53,6 +53,7 @@ class Polygon {
         //check if the geojson string is correct
         if ($a == null or !isset($a->type) or !isset($a->coordinates)){
             //throw PolygonException::badJsonString();
+            return $geojson;
         }
         
         if ($a->type != "Polygon"){

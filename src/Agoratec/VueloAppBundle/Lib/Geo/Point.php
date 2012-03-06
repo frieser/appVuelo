@@ -33,9 +33,10 @@ class Point {
      */
     public static function fromGeoJson($geojson) 
     {
-        $a = json_decode($geojson);
+        $a = json_decode($geojson,true);
         //check if the geojson string is correct
         if ($a == null or !isset($a->type) or !isset($a->coordinates)){
+        	return $geojson;
             //throw PointException::badJsonString();
         }
         
@@ -51,11 +52,8 @@ class Point {
     
     public static function fromLonLat($lon, $lat)
     {
-        if (($lon > -180 && $lon < 180) && ($lat > -90 && $lat < 90))
-        {
+        
             return new Point($lon, $lat);
-        } else {
-            throw PointException::badCoordinates($lon, $lat);
-        }
+        
     }
 }

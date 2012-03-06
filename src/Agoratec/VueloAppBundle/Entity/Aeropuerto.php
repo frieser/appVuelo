@@ -20,7 +20,7 @@ class Aeropuerto
     /**
      * @ORM\Column(type="string", length=100)
      */
-    protected $name;
+    protected $nombre;
 	
 	/**
      * @ORM\Column(type="string",length=1)
@@ -31,6 +31,8 @@ class Aeropuerto
      * @ORM\Column(type="Point")
      */
     protected $posicion;
+
+
 
     /**
      * Get aid
@@ -43,23 +45,23 @@ class Aeropuerto
     }
 
     /**
-     * Set name
+     * Set nombre
      *
-     * @param string $name
+     * @param string $nombre
      */
-    public function setName($name)
+    public function setNombre($nombre)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
     }
 
     /**
-     * Get name
+     * Get nombre
      *
      * @return string 
      */
-    public function getName()
+    public function getNombre()
     {
-        return $this->name;
+        return $this->nombre;
     }
 
     /**
