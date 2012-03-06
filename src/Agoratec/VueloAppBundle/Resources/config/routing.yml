@@ -13,3 +13,13 @@ AgoratecVueloAppBundle_navigationkmlpage:
 AgoratecVueloAppBundle_adminpage:
     pattern:  /admin
     defaults: { _controller: AgoratecVueloAppBundle:Admin:index }
+
+usuario_login:
+    pattern:  /usuario/login
+    defaults: { _controller: AgoratecVueloAppBundle:Usuario:login }
+    
+usuario_login_check:
+    pattern:  /usuario/login_check
+    
+usuario_logout:
+    pattern:  /usuario/logout

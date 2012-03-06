@@ -3,12 +3,14 @@
 namespace Agoratec\VueloAppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="app.usuarios")
  */
-class Usuario
+class Usuario implements UserInterface
 {
     /**
 	* @ORM\Id
@@ -60,7 +62,24 @@ class Usuario
         $this->aviones = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
-    
+    function equals(\Symfony\Component\Security\Core\User\UserInterface $usuario)
+	{
+		return $this->getEmail() == $usuario->getEmail();
+	}
+	
+	function eraseCredentials()
+	{
+		
+	}
+	function getRoles()
+	{
+		return array('ROLE_USUARIO');
+	}
+	function getUsername()
+	{
+		return $this->getEmail();
+	}
+	
 
     /**
      * Get uid
