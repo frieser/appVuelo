@@ -5,32 +5,36 @@ namespace Agoratec\VueloAppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Agoratec\VueloAppBundle\Entity\Avion
+ * @ORM\Entity
+ * @ORM\Table(name="app.aviones")
  */
 class Avion
 {
-    /**
-     * @var integer $avid
+	/**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $avid;
 
-    /**
-     * @var string $marca
+	/**
+     * @ORM\Column(type="string", length=100)
      */
     private $marca;
 
     /**
-     * @var string $modelo
+     * @ORM\Column(type="string", length=100)
      */
     private $modelo;
 
     /**
-     * @var Agoratec\VueloAppBundle\Entity\Usuario
+     * @ORM\ManyToOne(targetEntity="Usuario", inversedBy="aviones")
+     * @ORM\JoinColumn(name="avion", referencedColumnName="avid")
      */
     private $propietario;
 
     /**
-     * @var Agoratec\VueloAppBundle\Entity\AvionPosicion
+     * @ORM\OneToMany(targetEntity="AvionPosicion", mappedBy="avion")
      */
     private $posiciones;
 
@@ -39,6 +43,8 @@ class Avion
         $this->posiciones = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    
+
     /**
      * Get avid
      *

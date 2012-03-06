@@ -5,67 +5,53 @@ namespace Agoratec\VueloAppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Agoratec\VueloAppBundle\Entity\Usuario
+ * @ORM\Entity
+ * @ORM\Table(name="app.usuarios")
  */
 class Usuario
 {
     /**
-     * @var integer $uid
+	* @ORM\Id
+	* @ORM\Column(type="integer")
+	* @ORM\GeneratedValue
+	*/
+	protected $uid;
+	
+	/**
+     * @ORM\Column(type="string", length=100)
      */
-    private $uid;
+	protected $nombre;
+
+	/**
+     * @ORM\Column(type="string", length=100)
+     */
+	protected $login;
+	
+	/**
+     * @ORM\Column(type="string", length=100)
+     */
+	protected $password;
+	
+	/**
+     * @ORM\Column(type="string", length=100)
+     */
+	protected $salt;
+
 
     /**
-     * @var string $login
-     */
-    private $login;
-
-    /**
-     * @var string $name
-     */
-    private $name;
-
-    /**
-     * @var string $status
-     */
-    private $status;
-
-    /**
-     * @var string $role
-     */
-    private $role;
-
-    /**
-     * @var string $salt
-     */
-    private $salt;
-
-    /**
-     * @var string $password
-     */
-    private $password;
-
-    /**
-     * @var string $email
+     * @ORM\Column(type="string", length=100)
      */
     private $email;
 
-    /**
-     * @var string $activationKey
-     */
-    private $activationKey;
+
 
     /**
-     * @var datetime $createdAt
-     */
-    private $createdAt;
-
-    /**
-     * @var text $bios
+     * @ORM\Column(type="text")
      */
     private $bios;
 
     /**
-     * @var Agoratec\VueloAppBundle\Entity\Post
+     * @ORM\OneToMany(targetEntity="Avion", mappedBy="propietario")
      */
     private $aviones;
 
@@ -74,6 +60,8 @@ class Usuario
         $this->aviones = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    
+
     /**
      * Get uid
      *
@@ -82,6 +70,26 @@ class Usuario
     public function getUid()
     {
         return $this->uid;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
     }
 
     /**
@@ -105,63 +113,23 @@ class Usuario
     }
 
     /**
-     * Set name
+     * Set password
      *
-     * @param string $name
+     * @param string $password
      */
-    public function setName($name)
+    public function setPassword($password)
     {
-        $this->name = $name;
+        $this->password = $password;
     }
 
     /**
-     * Get name
+     * Get password
      *
      * @return string 
      */
-    public function getName()
+    public function getPassword()
     {
-        return $this->name;
-    }
-
-    /**
-     * Set status
-     *
-     * @param string $status
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string 
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Set role
-     *
-     * @param string $role
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
-    }
-
-    /**
-     * Get role
-     *
-     * @return string 
-     */
-    public function getRole()
-    {
-        return $this->role;
+        return $this->password;
     }
 
     /**
@@ -185,26 +153,6 @@ class Usuario
     }
 
     /**
-     * Set password
-     *
-     * @param string $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string 
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
      * Set email
      *
      * @param string $email
@@ -222,46 +170,6 @@ class Usuario
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Set activationKey
-     *
-     * @param string $activationKey
-     */
-    public function setActivationKey($activationKey)
-    {
-        $this->activationKey = $activationKey;
-    }
-
-    /**
-     * Get activationKey
-     *
-     * @return string 
-     */
-    public function getActivationKey()
-    {
-        return $this->activationKey;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param datetime $createdAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return datetime 
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
     }
 
     /**
@@ -287,9 +195,9 @@ class Usuario
     /**
      * Add aviones
      *
-     * @param Agoratec\VueloAppBundle\Entity\Post $aviones
+     * @param Agoratec\VueloAppBundle\Entity\Avion $aviones
      */
-    public function addPost(\Agoratec\VueloAppBundle\Entity\Post $aviones)
+    public function addAvion(\Agoratec\VueloAppBundle\Entity\Avion $aviones)
     {
         $this->aviones[] = $aviones;
     }
@@ -302,12 +210,5 @@ class Usuario
     public function getAviones()
     {
         return $this->aviones;
-    }
-    /**
-     * @ORM\prePersist
-     */
-    public function setCreatedValue()
-    {
-        // Add your code here
     }
 }

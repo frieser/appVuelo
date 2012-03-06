@@ -13,7 +13,7 @@ class AvionPosicion
 {
 	/**
 	 * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Aviones", inversedBy="posiciones")
+     * @ORM\ManyToOne(targetEntity="Avion", inversedBy="posiciones")
      * @ORM\JoinColumn(name="avion", referencedColumnName="avid")
      */
     protected $avion;
