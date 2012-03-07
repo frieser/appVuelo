@@ -44,4 +44,94 @@ class Avion
     }
     
     
+
+    /**
+     * Get avid
+     *
+     * @return integer 
+     */
+    public function getAvid()
+    {
+        return $this->avid;
+    }
+
+    /**
+     * Set marca
+     *
+     * @param string $marca
+     */
+    public function setMarca($marca)
+    {
+        $this->marca = $marca;
+    }
+
+    /**
+     * Get marca
+     *
+     * @return string 
+     */
+    public function getMarca()
+    {
+        return $this->marca;
+    }
+
+    /**
+     * Set modelo
+     *
+     * @param string $modelo
+     */
+    public function setModelo($modelo)
+    {
+        $this->modelo = $modelo;
+    }
+
+    /**
+     * Get modelo
+     *
+     * @return string 
+     */
+    public function getModelo()
+    {
+        return $this->modelo;
+    }
+
+    /**
+     * Set propietario
+     *
+     * @param Agoratec\VueloAppBundle\Entity\Usuario $propietario
+     */
+    public function setPropietario(\Agoratec\VueloAppBundle\Entity\Usuario $propietario)
+    {
+        $this->propietario = $propietario;
+    }
+
+    /**
+     * Get propietario
+     *
+     * @return Agoratec\VueloAppBundle\Entity\Usuario 
+     */
+    public function getPropietario()
+    {
+        return $this->propietario;
+    }
+
+    /**
+     * Add posiciones
+     *
+     * @param Agoratec\VueloAppBundle\Entity\AvionPosicion $posiciones
+     */
+    public function addAvionPosicion(\Agoratec\VueloAppBundle\Entity\AvionPosicion $posiciones)
+    {
+        $this->posiciones[] = $posiciones;
+    }
+
+    /**
+     * Get posiciones
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getPosiciones()
+    {
+        return $this->posiciones;
+    }
 }

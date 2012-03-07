@@ -23,3 +23,12 @@ usuario_login_check:
     
 usuario_logout:
     pattern:  /usuario/logout
+    
+   
+usuario_registro:
+    pattern:  /usuario/registro
+    defaults: { _controller: AgoratecVueloAppBundle:Usuario:registro }
+    
+usuario_perfil:
+    pattern: /usuario/perfil
+    defaults: { _controller: AgoratecVueloAppBundle:Usuario:perfil }

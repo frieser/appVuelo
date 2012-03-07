@@ -2,32 +2,63 @@
 
 {% block title %}Formulario de acceso{% endblock %}
 
-{% block id 'usuario' %}
+
 
 
 {% block body %}
 	{{ parent() }}
 
 	{% include "AgoratecVueloAppBundle:Navigation:navbar.html.twig"%}
-
-	{% include "AgoratecVueloAppBundle:Home:intro.html.twig"%}
-
-	{% if error %}
-		<div>{{ error.message }}</div>
-	{% endif %}
+	<div class="row">
+	<div class="span4 offset5">
+	<div id="login" style="margin-top:100px">
+		
 	
-	<form action="{{ path('usuario_login_check') }}" method="post">
-		<label for="username">Usuario:</label>
-		<input type="text" id="username" name="_username"
-		value="{{ last_username }}" />
-		<label for="password">Contraseña:</label>
-		<input type="password" id="password" name="_password" />
-		<input type="submit" name="login" value="Acceder" />
-	</form>
-
+	
+	
+		<form action="{{ path('usuario_login_check') }}" method="post" class="well">
+		  <fieldset>
+		    <legend>Introduzca sus datos</legend>
+		    <div class="control-group">
+		      <label class="control-label" for="username">Usuario</label>
+		      <div class="controls">
+		        <input class="input-xlarge" type="text" id="username" name="_username"
+				value="{{ last_username }}" />
+		        <p class="help-block">Tu nombre de usuario</p>
+		      </div>
+		      
+		      <label class="control-label" for="password">Contraseña</label>
+		      <div class="controls">
+		        <input  class="input-xlarge" type="password" id="password" name="_password" />
+		        <p class="help-block">Tu contraseña</p>
+		      </div>
+		      
+		      <div class="controls">
+		        	<input type="checkbox" id="no_cerrar" name="_remember_me" checked />
+		        	<label  class="control-label" for="no_cerrar">No cerrar sesión</label>
+		      </div>
+		      
+		      <div class="controls">
+		      	
+		      	<input class="btn-info btn-mini" type="submit" name="login" value="Iniciar Sesion" />
+		      </div>
+		    </div>
+		  </fieldset>
+		  
+		  {% if error %}
+			<div>{{ error.message }}</div>
+		{% endif %}
+		</form>
+		<div class="well">
+			<fieldset>
+		    <legend>Si no esta registrado</legend>
+				<a href="{{ path('usuario_registro') }}"><input class="btn-warning btn-mini" type="submit" name="login" value="Registrate >>" /></a>
+			</fieldset>
+		</div>
+	</div>
+	</div>
+	</div>
 {% endblock %}
 
-
-	
 
 {% block aside %}{% endblock %}

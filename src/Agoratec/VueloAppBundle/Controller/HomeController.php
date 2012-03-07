@@ -4,7 +4,7 @@ namespace Agoratec\VueloAppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Agoratec\VueloAppBundle\Entity\Aeropuerto;
+
 use Agoratec\VueloAppBundle\Lib\Geo\Point;
 
 

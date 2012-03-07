@@ -3,6 +3,7 @@
 namespace Agoratec\VueloAppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 
@@ -21,16 +22,20 @@ class Usuario implements UserInterface
 	
 	/**
      * @ORM\Column(type="string", length=100)
+	 * @Assert\NotBlank()
+	 * 
      */
 	protected $nombre;
 
 	/**
      * @ORM\Column(type="string", length=100)
+	 * @Assert\NotBlank()
      */
 	protected $login;
 	
 	/**
      * @ORM\Column(type="string", length=100)
+	 * @Assert\MinLength(6)
      */
 	protected $password;
 	
@@ -45,7 +50,10 @@ class Usuario implements UserInterface
      */
     private $email;
 
-
+	  /**
+     * @ORM\Column(type="date")
+     */
+    private $fecha_nac;
 
     /**
      * @ORM\Column(type="text")
@@ -229,5 +237,25 @@ class Usuario implements UserInterface
     public function getAviones()
     {
         return $this->aviones;
+    }
+
+    /**
+     * Set fecha_nac
+     *
+     * @param date $fechaNac
+     */
+    public function setFechaNac($fechaNac)
+    {
+        $this->fecha_nac = $fechaNac;
+    }
+
+    /**
+     * Get fecha_nac
+     *
+     * @return date 
+     */
+    public function getFechaNac()
+    {
+        return $this->fecha_nac;
     }
 }

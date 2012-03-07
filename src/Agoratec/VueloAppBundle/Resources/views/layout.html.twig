@@ -11,6 +11,12 @@
 
 
 {% block body %}
+	{% if is_granted('ROLE_USUARIO') %}
+		{% if app.session.hasFlash('info') %}
+			<p class="info">{{ app.session.getFlash('info') }}</p>
+		{% endif %}
+	{% endif %}
+
 {% endblock %}
 {% block javascripts %}
 		<!--[if lt IE 9]>

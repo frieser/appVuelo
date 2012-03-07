@@ -97,5 +97,5 @@
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: Caceres</name><description>Caceres</description><Point><coordinates>-6.379623,39.465353999999998</coordinates></Point></Placemark>
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: Badajoz</name><description>Badajoz</description><Point><coordinates>-6.999664,38.893171000000002</coordinates></Point></Placemark>
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: test</name><description>test</description><Point><coordinates>35,23</coordinates></Point></Placemark>
-<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>-6.3606601,39.4924988</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>-6.360691,39.4924804</coordinates></Point></Placemark>
 </Folder></Document></kml>

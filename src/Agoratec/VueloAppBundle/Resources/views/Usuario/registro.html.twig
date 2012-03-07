@@ -1,0 +1,39 @@
+{% extends 'AgoratecVueloAppBundle::layout.html.twig' %}
+
+{% block title %}Regístrate gratis como usuario{% endblock %}
+
+{% block id 'usuario' %}
+
+
+{% block body %}
+	{{ parent() }}
+
+	{% include "AgoratecVueloAppBundle:Navigation:navbar.html.twig"%}
+
+	<h1>{{ block('title') }}</h1>
+	
+	<form action="{{ path('usuario_registro') }}" method="post" {{
+		form_enctype(formulario) }}>
+		{{ form_errors(formulario) }}
+		<fieldset>
+		<legend>Datos personales</legend>
+		{{ form_row(formulario.nombre) }}
+		{{ form_row(formulario.login) }}
+		{{ form_row(formulario.fecha_nac) }}
+		</fieldset>
+		<fieldset>
+		<legend>Datos de acceso</legend>
+		{{ form_row(formulario.email) }}
+		{{ form_row(formulario.password) }}
+		</fieldset>
+		{{ form_rest(formulario) }}
+		<input class="boton" type="submit" value="Registrarme" />
+	</form>
+
+	
+		
+
+{% endblock %}
+
+
+{% block aside %}{% endblock %}
