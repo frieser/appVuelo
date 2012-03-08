@@ -46,5 +46,5 @@
 <Placemark><styleUrl>#styleMapExample</styleUrl><name>Avion: 3</name><description>3</description><Point><coordinates>-5.817261,39.008513000000001</coordinates></Point></Placemark>
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: Caceres</name><description>Caceres</description><Point><coordinates>-6.379623,39.465353999999998</coordinates></Point></Placemark>
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: Badajoz</name><description>Badajoz</description><Point><coordinates>-6.999664,38.893171000000002</coordinates></Point></Placemark>
-<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>-6.3606564,39.4925063</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>-6.3606507,39.4925168</coordinates></Point></Placemark>
 </Folder></Document></kml>

@@ -21,7 +21,8 @@ class NavigationController extends Controller
        //$lat=$_GET["lat"];
 	//$lng=$_GET["lng"];
 
-	$ourFileName = "/home/appvuelo/appvuelo/web/kml_tmp/test.kml";
+	$url=date("d-m-Y-H:i:s").'_test.kml';
+	$ourFileName = "/home/appvuelo/appvuelo/web/kml_tmp/".$url;
 
 	$ourFileHandle = fopen($ourFileName, 'w') or die("can't ooopen file");
 	 
@@ -129,7 +130,8 @@ class NavigationController extends Controller
 	fclose($ourFileHandle);
 	 
 	//envia  el documento kml al navegador del usuario
-	return new Response($kml);
+	$url='http://150.241.237.246/kml_tmp/'.$url;
+	return new Response($url);
 	
     }
 }

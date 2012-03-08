@@ -94,6 +94,8 @@ xmlhttp.onreadystatechange=function()
 	
 	kml=xmlhttp.responseText.toString();
 	alert(xmlhttp.responseText);
+	var ctaLayer = new google.maps.KmlLayer(kml.toString());
+	ctaLayer.setMap(map);
     }
   }
 
@@ -111,8 +113,7 @@ $(".navbar .nav li.localizate a").click(function() {
 	infowindow.open(map,marker);
 });
 
-var ctaLayer = new google.maps.KmlLayer("http://150.241.237.246/kml_tmp/test.kml");
-	ctaLayer.setMap(map);
+
 
 
 	var homeControlDiv = document.createElement('DIV');
