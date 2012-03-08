@@ -10,27 +10,41 @@
 
 	{% include "AgoratecVueloAppBundle:Navigation:navbar.html.twig"%}
 
-	<h1>{{ block('title') }}</h1>
-	
-	<form action="{{ path('usuario_registro') }}" method="post" {{
+	<div class="row">
+	<div class="span3 offset3" id="registro" style="margin-top:100px;">
+		
+	<form class="well" action="{{ path('usuario_registro') }}" method="post" {{
 		form_enctype(formulario) }}>
 		{{ form_errors(formulario) }}
 		<fieldset>
 		<legend>Datos personales</legend>
 		{{ form_row(formulario.nombre) }}
-		{{ form_row(formulario.login) }}
-		{{ form_row(formulario.fecha_nac) }}
+		{{ form_row(formulario.email) }}
 		</fieldset>
 		<fieldset>
 		<legend>Datos de acceso</legend>
-		{{ form_row(formulario.email) }}
+		{{ form_row(formulario.login) }}	
 		{{ form_row(formulario.password) }}
 		</fieldset>
 		{{ form_rest(formulario) }}
-		<input class="boton" type="submit" value="Registrarme" />
+		<input class="btn-info span2" type="submit" value="Registrarme >>" />
 	</form>
 
+	</div>
 	
+	<div class="span4  well" id="registro" style="margin-top:100px;">
+		<fieldset>
+		    <legend>Si ya esta registrado</legend>
+		    	<div class=" span2 offset1">
+				<a href="{{ path('usuario_login') }}"><input class="btn-warning span2" type="submit" name="login" value="Loqueate >>" /></a>
+				</div>
+			</fieldset>
+	</div>
+	
+	<div class="span4 offset1" id="registro" style="margin-top:100px;">
+		<img src="http://www.fxdomains.com/images/icons/ssl.png" height="200px" width="200px"/>
+	</div>
+	</div>
 		
 
 {% endblock %}

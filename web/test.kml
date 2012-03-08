@@ -1,7 +1,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2"><Document><Style id="normalState">
 	    <IconStyle>
 	      <scale>1.0</scale>
-	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/airport_icon_128.png</href>
+	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/plane_icon_64.png</href>
 	      </Icon>
 	    </IconStyle>
 	    <LabelStyle>
@@ -10,7 +10,7 @@
 	  </Style>
 	  <Style id="highlightState">
 	    <IconStyle>
-	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/plane_icon_128.png</href>
+	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/airport_icon_64.png</href>
 	      </Icon>
 	      <scale>1.1</scale>
 	    </IconStyle>
@@ -45,6 +45,7 @@
 <Placemark><name>Zona: LER76 EL FERROL (sector E)</name><description>LER76 EL FERROL (sector E)</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-8.132300000000001,43.231200000000001 -8.145099999999999,43.264499999999998 -8.172000000000001,43.271500000000003 -8.113,43.350000000000001 -8.0526,43.395699999999998 -8.041499999999999,43.3155 -8.0358,43.253399999999999 -8.132300000000001,43.231200000000001</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: LER76 EL FERROL (sector W)</name><description>LER76 EL FERROL (sector W)</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-8.172000000000001,43.271500000000003 -8.2052,43.274999999999999 -8.113,43.350000000000001 -8.172000000000001,43.271500000000003</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: LER77 CARTAGENA (Murcia)</name><description>LER77 CARTAGENA (Murcia)</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-0.4121,37.3812 -1.1033,37.330300000000001 -1.0714,37.371600000000001 -1.0416,37.412700000000001 -1.0225,37.431100000000001 -0.5942,37.424500000000002 -0.5748,37.412300000000002 -0.541,37.394799999999996 -0.5204,37.385199999999998 -0.4638,37.372500000000002 -0.4121,37.3812</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark><name>Zona: LER86 BADAJOZ (sector A)</name><description>LER86 BADAJOZ (sector A)</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-6.57,39.090000000000003 -6.17,39.090000000000003 -6.17,38.380000000000003 -7.15,8.380000000000001 -7.01,39.07 -6.57,39.090000000000003</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: LER86 BADAJOZ (sector B)</name><description>LER86 BADAJOZ (sector B)</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-4.31,39.5 -5.05,38.450000000000003 -5.13,38.299999999999997 -5.22,38.299999999999997 -6.13,37.439999999999998 -7,38.049999999999997 -6.24,39.25 -4.31,39.5</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: LER86 BADAJOZ (sector C)</name><description>LER86 BADAJOZ (sector C)</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-4.38,39.479999999999997 -6.05,38.009999999999998 -6.24,37.490000000000002 -7,38.049999999999997 -7.08,39.079999999999998 -6.24,39.25 -4.38,39.479999999999997</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
 <Placemark><name>Zona: LER93 MARISMA DE HUELVA</name><description>LER93 MARISMA DE HUELVA</description><Polygon><outerBoundaryIs><LinearRing><coordinates>-6.593,37.164200000000001 -6.57,37.154800000000002 -6.573,37.105400000000003 -7.0118,37.124200000000002 -6.593,37.164200000000001</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
@@ -95,5 +96,5 @@
 <Placemark><styleUrl>#styleMapExample</styleUrl><name>Avion: 3</name><description>3</description><Point><coordinates>-5.817261,39.008513000000001</coordinates></Point></Placemark>
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: Caceres</name><description>Caceres</description><Point><coordinates>-6.379623,39.465353999999998</coordinates></Point></Placemark>
 <Placemark><styleUrl>#styleMapAeroExample</styleUrl><name>Aeropuerto: Badajoz</name><description>Badajoz</description><Point><coordinates>-6.999664,38.893171000000002</coordinates></Point></Placemark>
-<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>-6.3606653,39.4924916</coordinates></Point></Placemark>
+<Placemark><styleUrl>#styleMapExample</styleUrl><name>Tu posicion</name><description>Tu posicion</description><Point><coordinates>-6.360673999999999,39.4924921</coordinates></Point></Placemark>
 </Folder></Document></kml>

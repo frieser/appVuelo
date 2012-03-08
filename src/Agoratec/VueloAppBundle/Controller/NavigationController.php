@@ -50,7 +50,7 @@ class NavigationController extends Controller
 	$kml.="<Style id=\"normalState\">
 	    <IconStyle>
 	      <scale>1.0</scale>
-	      <Icon><href>http://www.yumping.com/skin/new2011/img/iconsmap/grupos/iconMap31p.png</href>
+	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/airport_icon_128.png</href>
 	      </Icon>
 	    </IconStyle>
 	    <LabelStyle>
@@ -59,7 +59,7 @@ class NavigationController extends Controller
 	  </Style>
 	  <Style id=\"highlightState\">
 	    <IconStyle>
-	      <Icon><href>http://www.dublinbus.ie/Images/RouteTypeIcons/Airport_Icon.png</href>
+	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/plane_icon_128.png</href>
 	      </Icon>
 	      <scale>1.1</scale>
 	    </IconStyle>

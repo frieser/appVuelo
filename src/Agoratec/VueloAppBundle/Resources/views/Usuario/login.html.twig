@@ -10,8 +10,7 @@
 
 	{% include "AgoratecVueloAppBundle:Navigation:navbar.html.twig"%}
 	<div class="row">
-	<div class="span4 offset5">
-	<div id="login" style="margin-top:100px">
+	<div class="span4 offset5" id="login" style="margin-top:100px">
 		
 	
 	
@@ -19,17 +18,17 @@
 		<form action="{{ path('usuario_login_check') }}" method="post" class="well">
 		  <fieldset>
 		    <legend>Introduzca sus datos</legend>
-		    <div class="control-group">
+		    <div class="control-group ">
 		      <label class="control-label" for="username">Usuario</label>
 		      <div class="controls">
-		        <input class="input-xlarge" type="text" id="username" name="_username"
+		        <input class="span3" type="text" id="username" name="_username"
 				value="{{ last_username }}" />
 		        <p class="help-block">Tu nombre de usuario</p>
 		      </div>
 		      
 		      <label class="control-label" for="password">Contraseña</label>
 		      <div class="controls">
-		        <input  class="input-xlarge" type="password" id="password" name="_password" />
+		        <input  class="span3" type="password" id="password" name="_password" />
 		        <p class="help-block">Tu contraseña</p>
 		      </div>
 		      
@@ -38,9 +37,9 @@
 		        	<label  class="control-label" for="no_cerrar">No cerrar sesión</label>
 		      </div>
 		      
-		      <div class="controls">
+		      <div class="controls span2 offset1">
 		      	
-		      	<input class="btn-info btn-mini" type="submit" name="login" value="Iniciar Sesion" />
+		      	<input class="btn-info  span2" type="submit" name="login" value="Iniciar Sesion >>" />
 		      </div>
 		    </div>
 		  </fieldset>
@@ -50,12 +49,13 @@
 		{% endif %}
 		</form>
 		<div class="well">
-			<fieldset>
-		    <legend>Si no esta registrado</legend>
-				<a href="{{ path('usuario_registro') }}"><input class="btn-warning btn-mini" type="submit" name="login" value="Registrate >>" /></a>
-			</fieldset>
+				<fieldset>
+			    <legend>Si no esta registrado</legend>
+			    	<div class=" span2 offset1">
+					<a href="{{ path('usuario_registro') }}"><input class="btn-warning  span2" type="submit" name="login" value="Registrate >>" /></a>
+					</div>
+				</fieldset>
 		</div>
-	</div>
 	</div>
 	</div>
 {% endblock %}

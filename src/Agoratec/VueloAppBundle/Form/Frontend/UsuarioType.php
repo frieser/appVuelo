@@ -18,7 +18,7 @@ class UsuarioType extends AbstractType
 		'options' => array('label' => 'Contraseña')
 		))		
 		->add('email','email')
-		->add('fecha_nac', 'birthday')
+		//->add('fecha_nac', 'birthday')
 		;
 	}
 	
