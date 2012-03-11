@@ -51,18 +51,27 @@ class NavigationController extends Controller
 	$kml.="<Style id=\"normalState\">
 	    <IconStyle>
 	      <scale>1.0</scale>
-	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/airport_icon_128.png</href>
+	      <Icon><href>http://www.mapsmarker.com/wp-content/uploads/leaflet-maps-marker-icons/planecrash.png</href>
 	      </Icon>
 	    </IconStyle>
 	    <LabelStyle>
-	      <scale>1.0</scale>
+	      <scale>2.0</scale>
 	    </LabelStyle>
 	  </Style>
+	   <Style id=\"transBluePoly\">
+      <LineStyle>
+        <width>2</width>
+        <color>cc000000</color>
+      </LineStyle>
+      <PolyStyle>
+        <color>ccD4D4D4</color>
+      </PolyStyle>
+    </Style>
 	  <Style id=\"highlightState\">
 	    <IconStyle>
-	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/plane_icon_128.png</href>
+	      <Icon><href>http://google-maps-icons.googlecode.com/files/airport-runway.png</href>
 	      </Icon>
-	      <scale>1.1</scale>
+	      <scale>2.0</scale>
 	    </IconStyle>
 	    <LabelStyle>
 	      <scale>1.1</scale>
@@ -92,7 +101,7 @@ class NavigationController extends Controller
 	    $townkml =  pg_result($query_result, $i, 1);
 	 
 	    //creamos el placemark para la fila
-	    $kml .= "<Placemark><name>Zona: ".$townname."</name><description>".$townname."</description>".$townkml."</Placemark>\n";
+	    $kml .= "<Placemark><name>Zona: ".$townname."</name> <styleUrl>#transBluePoly</styleUrl><description>".$townname."</description>".$townkml."</Placemark>\n";
 	}
 
 	for ($i = 0; $i < pg_numrows($query_result_posciones); $i++) {

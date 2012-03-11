@@ -93,7 +93,6 @@ xmlhttp.onreadystatechange=function()
     {
 	
 	kml=xmlhttp.responseText.toString();
-	alert(xmlhttp.responseText);
 	var ctaLayer = new google.maps.KmlLayer(kml.toString());
 	ctaLayer.setMap(map);
     }

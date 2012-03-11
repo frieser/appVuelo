@@ -7,7 +7,14 @@ margin-bottom: 0px;
 }
 #map_canvas { 
 
-height: 100%;
-padding-top:44px; 
+height: 94%;
+padding-top:44px;
+z-index: =-1;
 
+}
+
+#route{	
+	position:absolute;
+	   z-index:1;
+	     top: 88px;
 }
