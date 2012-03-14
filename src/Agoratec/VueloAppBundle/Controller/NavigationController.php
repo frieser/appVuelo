@@ -51,7 +51,7 @@ class NavigationController extends Controller
 	$kml.="<Style id=\"normalState\">
 	    <IconStyle>
 	      <scale>1.0</scale>
-	      <Icon><href>http://www.mapsmarker.com/wp-content/uploads/leaflet-maps-marker-icons/planecrash.png</href>
+	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/navigation/planecrash.png</href>
 	      </Icon>
 	    </IconStyle>
 	    <LabelStyle>
@@ -64,12 +64,12 @@ class NavigationController extends Controller
         <color>cc000000</color>
       </LineStyle>
       <PolyStyle>
-        <color>ccD4D4D4</color>
+        <color>66ffffff</color>
       </PolyStyle>
     </Style>
 	  <Style id=\"highlightState\">
 	    <IconStyle>
-	      <Icon><href>http://google-maps-icons.googlecode.com/files/airport-runway.png</href>
+	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/navigation/airport-runway.png</href>
 	      </Icon>
 	      <scale>2.0</scale>
 	    </IconStyle>

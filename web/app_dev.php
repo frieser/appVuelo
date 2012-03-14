@@ -8,7 +8,7 @@
 // feel free to remove this, extend it, or make something more sophisticated.
 if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
     '127.0.0.1',
-    '90.162.74.160',
+    '90.162.66.92',
     '88.5.8.12',
     '::1',
 ))) {
