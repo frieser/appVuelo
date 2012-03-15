@@ -38,10 +38,11 @@ position: google.maps.ControlPosition.RIGHT_CENTER
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(initialLocation);
 	
-	var url="http://150.241.237.246/app_dev.php/navigation/kml/";
+	var url="http://150.241.237.246/app.php/navigation/kml/";
 	url+=position.coords.latitude;
 	url+="&";
 	url+=position.coords.longitude;
+	//alert(url);
 	xmlhttp.open("GET",url,true);
 	xmlhttp.send();
 	
@@ -93,6 +94,7 @@ xmlhttp.onreadystatechange=function()
     {
 	
 	kml=xmlhttp.responseText.toString();
+	//alert(kml.toString());
 	var ctaLayer = new google.maps.KmlLayer(kml.toString());
 	ctaLayer.setMap(map);
     }
