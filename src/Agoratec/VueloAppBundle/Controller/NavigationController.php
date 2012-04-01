@@ -22,7 +22,7 @@ class NavigationController extends Controller
 	//$lng=$_GET["lng"];
 
 	$url=date("d-m-Y-H:i:s").'_test.kml';
-	$ourFileName = "/home/appvuelo/appvuelo/web/kml_tmp/".$url;
+	$ourFileName = "/home/frieser/www/appvuelo/web/kml_tmp/".$url;
 
 	$ourFileHandle = fopen($ourFileName, 'w') or die("can't ooopen file");
 	 
@@ -30,7 +30,7 @@ class NavigationController extends Controller
 	//y retorna un kml al navegador del cliente
 	 
 	//crea la conexiÃ³n con la base de datos
-	$dbconn = pg_connect("host=localhost port=5432 dbname=vuelo user=postgres password=lxMRb9Hu")
+	$dbconn = pg_connect("host=localhost port=5432 dbname=vuelo user=postgres password=puntero21")
 	or die ("No pudo conectar");
 	 
 	// definiciÃ³n de la consulta
@@ -51,7 +51,7 @@ class NavigationController extends Controller
 	$kml.="<Style id=\"normalState\">
 	    <IconStyle>
 	      <scale>1.0</scale>
-	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/navigation/planecrash.png</href>
+	      <Icon><href>http://192.168.1.13/bundles/agoratecvueloapp/images/navigation/planecrash.png</href>
 	      </Icon>
 	    </IconStyle>
 	    <LabelStyle>
@@ -69,7 +69,7 @@ class NavigationController extends Controller
     </Style>
 	  <Style id=\"highlightState\">
 	    <IconStyle>
-	      <Icon><href>http://150.241.237.246/bundles/agoratecvueloapp/images/navigation/airport-runway.png</href>
+	      <Icon><href>http://192.168.1.13/bundles/agoratecvueloapp/images/navigation/airport-runway.png</href>
 	      </Icon>
 	      <scale>2.0</scale>
 	    </IconStyle>
