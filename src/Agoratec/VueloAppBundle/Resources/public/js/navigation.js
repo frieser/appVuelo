@@ -42,7 +42,7 @@ position: google.maps.ControlPosition.RIGHT_CENTER
 	url+=position.coords.latitude;
 	url+="&";
 	url+=position.coords.longitude;
-	//alert(url);
+	alert(url);
 	xmlhttp.open("GET",url,true);
 	xmlhttp.send();
 	
@@ -94,8 +94,9 @@ xmlhttp.onreadystatechange=function()
     {
 	
 	kml=xmlhttp.responseText.toString();
-	//alert(kml.toString());
-	var ctaLayer = new google.maps.KmlLayer(kml.toString());
+	alert(kml.toString());
+	//var ctaLayer = new google.maps.KmlLayer(kml.toString());
+  var ctaLayer = new google.maps.KmlLayer("http://dl.dropbox.com/u/150677/01-04-2012-23%3A48%3A14_test.kml");
 	ctaLayer.setMap(map);
     }
   }

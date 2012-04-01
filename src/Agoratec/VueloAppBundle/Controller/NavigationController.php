@@ -23,7 +23,7 @@ class NavigationController extends Controller
 
 	$url=date("d-m-Y-H:i:s").'_test.kml';
 	$ourFileName = "/home/frieser/www/appvuelo/web/kml_tmp/".$url;
-
+	//return new Response($url);
 	$ourFileHandle = fopen($ourFileName, 'w') or die("can't ooopen file");
 	 
 	//pÃ¡gina php de ejemplo que realiza una consulta en la base de datos
